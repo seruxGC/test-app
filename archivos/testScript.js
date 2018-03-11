@@ -148,12 +148,6 @@ function comenzar() {
     }
   }
 
-  /**
-  * Muestra un mensaje de texto
-  * @param {String} metodo nombre del metodo
-  * @param {String} mensaje mensaje a mostrar
-  * @returns {integer} el codigo de retorno 0
-  */
   function checkTabNum(numTabla) {
   /* Comprobar si el numero de la tabla es superior al maximo
    de preguntas */
@@ -209,10 +203,15 @@ function comenzar() {
     cambiarOpacidadNumTablas(numeroDeTabla);
   }
 
+  function selectTab(tablaSeleccionada) {
+    numeroDeTabla = tablaSeleccionada - 1;
+    siguienteTabla();
+  }
+
 
   function init() {
     // Inicializacion de variables
-    numImages = document.getElementsByClassName('numImage');
+    numImages = document.querySelectorAll('.numImage');
     btnSiguiente = document.getElementById('btn-siguiente');
     btnAnterior = document.getElementById('btn-anterior');
     tablas = document.getElementsByClassName('tabla');
@@ -230,6 +229,13 @@ function comenzar() {
     // Añadir evento al pulsar boton de navegacion
     btnSiguiente.onclick = siguienteTabla;
     btnAnterior.onclick = anteriorTabla;
+
+    // Añadir eventos a las imagenes de Indice de tabla
+    numImages.forEach((element, index) => {
+      element.addEventListener('click', () => {
+        selectTab(index);
+      });
+    });
   }
 
   init();
