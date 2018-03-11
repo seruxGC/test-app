@@ -1,0 +1,99 @@
+
+
+#Test{
+	position: relative;
+	margin: 20px auto;
+	width: 65%;
+	min-width: 500px;
+	max-width: 700px;
+	background-color: SlateGrey;
+}
+
+
+#numeracionTest{
+	display: flex;
+	align-items: center;
+	/*height: 50px;*/
+	background-color: Grey;
+	border-bottom: 1px solid black;
+}
+
+
+
+#navegacion{
+	padding-top: 10px;
+	width: 445px;
+	margin: 0 auto;
+	height: 50px;
+	border: 1px solid green;
+	
+}
+
+.numContainer{
+	text-align: center;
+	width: 10%;
+	padding: 5px;
+
+}
+
+.numImage{
+	width: 100%;
+	opacity: 0.3;
+}
+
+.tabla{
+	display: none;
+	width: 100%;
+	/*min-height: 240px;*/
+}
+
+.contenedorPregunta{
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	text-align: center;
+	min-height: 60px;
+	color: white;
+	font-size: 1.7em;
+	overflow: auto;
+
+	border: 1px solid red;
+}
+
+
+.contenedorRespuestaVertical{
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	padding: 0 5%;
+	min-height: 240px;
+}
+
+.contenedorRespuestaHorizontal{
+	display: flex;
+	flex-direction: column;
+    justify-content: space-evenly;
+	padding: 0 5%;
+	min-height: 240px;
+}
+
+.respuestaVertical{
+	width: 33%;
+	height: 200px;
+	border: 1px solid orange;
+}
+
+.respuestaHorizontal{
+	width: 100%;
+	border: 1px solid orange;
+}
+
+
+.botonNav{
+	cursor: pointer;
+	width: 220px;
+}
+
+.activeTab{
+	display: block;
+}
