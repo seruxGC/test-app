@@ -16,7 +16,7 @@ function comenzar() {
           b: 'opcionB1',
           c: 'opcionC1',
         },
-        correcto: 'a',
+        correcta: 'a',
       },
 
       {
@@ -26,7 +26,7 @@ function comenzar() {
           b: 'opcionB2',
           c: 'opcionC2',
         },
-        correcto: 'b',
+        correcta: 'b',
       },
 
       {
@@ -36,7 +36,7 @@ function comenzar() {
           b: 'opcionB3',
           c: 'opcionC3',
         },
-        correcto: 'b',
+        correcta: 'b',
       },
 
       {
@@ -46,7 +46,7 @@ function comenzar() {
           b: 'opcionB4',
           c: 'opcionC4',
         },
-        correcto: 'b',
+        correcta: 'b',
       },
 
       {
@@ -56,7 +56,7 @@ function comenzar() {
           b: 'opcionB5',
           c: 'opcionC5',
         },
-        correcto: 'b',
+        correcta: 'b',
       },
 
       {
@@ -66,7 +66,7 @@ function comenzar() {
           b: 'opcionB6',
           c: 'opcionC6',
         },
-        correcto: 'b',
+        correcta: 'b',
       },
 
       {
@@ -76,7 +76,7 @@ function comenzar() {
           b: 'opcionB7',
           c: 'opcionC7',
         },
-        correcto: 'b',
+        correcta: 'b',
       },
 
       {
@@ -86,7 +86,7 @@ function comenzar() {
           b: 'opcionB8',
           c: 'opcionC8',
         },
-        correcto: 'b',
+        correcta: 'b',
       },
 
       {
@@ -96,7 +96,7 @@ function comenzar() {
           b: 'opcionB9',
           c: 'opcionC9',
         },
-        correcto: 'b',
+        correcta: 'b',
       },
 
       {
@@ -106,36 +106,67 @@ function comenzar() {
           b: 'opcionB10',
           c: 'opcionC10',
         },
-        correcto: 'b',
+        correcta: 'b',
       },
-
     ],
 
   };
 
 
-  // Variables de elementos
+  // Variables de elementos init()
   let btnSiguiente;
   let btnAnterior;
   let tablas; // Coleccion de las tablas para mostrar
-  let numeroDeTabla; // Numero actual de pagina
-  let numImages; // Coleccion de las imagenes de los indices de las tablas
+  let numeroDeTabla; // Numero de la tabla actual
+  let numImages; // Imagenes de los indices de las tablas
+
+  // Variables del cuestionario initCuestionario()
+  let opciones;
+
+  function comprobarRespuesta(respuestaPulsada) {
+    const opcionCorrecta = TEST.cuestionario[numeroDeTabla].correcta;
+
+    if (respuestaPulsada === opcionCorrecta) {
+      console.log('respuesta correcta');
+    } else {
+      console.log('respuesta incorrecta');
+    }
+  }
 
   function initCuestionario() {
-    // Cargar las preguntas en cada tabla
+    // Inicializacion de variables del cuestionario
     const preguntas = document
       .getElementsByClassName('contenedorPregunta');
 
-    const opciones = document
-      .getElementsByClassName('respuestaHorizontal');
+    opciones = document.querySelectorAll('.respuestaHorizontal');
 
+    // Añade listeners a cada opcion
+    /*     TEST.cuestionario.forEach((element, index) => {
+      opciones[index].addEventListener('click', () => {
+        comprobarRespuesta(element[index].a);
+      });
+    }); */
+
+    // Recorre El array "cuestionario"
     TEST.cuestionario.forEach((element, index) => {
       // Escribe en cada tabla la preguntas/respuestas correspondientes
       preguntas[index].innerHTML = element.pregunta;
 
+      // Añade textos y listeners a cada opcion
       opciones[index * 3].innerHTML = element.opciones.a;
+      opciones[index * 3].addEventListener('click', () => {
+        comprobarRespuesta('a');
+      });
+
       opciones[(index * 3) + 1].innerHTML = element.opciones.b;
+      opciones[(index * 3) + 1].addEventListener('click', () => {
+        comprobarRespuesta('b');
+      });
+
       opciones[(index * 3) + 2].innerHTML = element.opciones.c;
+      opciones[(index * 3) + 2].addEventListener('click', () => {
+        comprobarRespuesta('c');
+      });
     });
   }
 
