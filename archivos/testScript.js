@@ -126,10 +126,13 @@ function comenzar() {
   function comprobarRespuesta(respuestaPulsada) {
     const opcionCorrecta = TEST.cuestionario[numeroDeTabla].correcta;
 
-    if (respuestaPulsada === opcionCorrecta) {
-      console.log('respuesta correcta');
+    if (respuestaPulsada === TEST.cuestionario[numeroDeTabla]
+      .opciones[opcionCorrecta]) {
+      // Respuesta  correcta
+      console.log('true');
     } else {
-      console.log('respuesta incorrecta');
+      // Respuesta incorrecta
+      console.log('false');
     }
   }
 
@@ -140,13 +143,6 @@ function comenzar() {
 
     opciones = document.querySelectorAll('.respuestaHorizontal');
 
-    // Añade listeners a cada opcion
-    /*     TEST.cuestionario.forEach((element, index) => {
-      opciones[index].addEventListener('click', () => {
-        comprobarRespuesta(element[index].a);
-      });
-    }); */
-
     // Recorre El array "cuestionario"
     TEST.cuestionario.forEach((element, index) => {
       // Escribe en cada tabla la preguntas/respuestas correspondientes
@@ -155,17 +151,17 @@ function comenzar() {
       // Añade textos y listeners a cada opcion
       opciones[index * 3].innerHTML = element.opciones.a;
       opciones[index * 3].addEventListener('click', () => {
-        comprobarRespuesta('a');
+        comprobarRespuesta(element.opciones.a);
       });
 
       opciones[(index * 3) + 1].innerHTML = element.opciones.b;
       opciones[(index * 3) + 1].addEventListener('click', () => {
-        comprobarRespuesta('b');
+        comprobarRespuesta(element.opciones.b);
       });
 
       opciones[(index * 3) + 2].innerHTML = element.opciones.c;
       opciones[(index * 3) + 2].addEventListener('click', () => {
-        comprobarRespuesta('c');
+        comprobarRespuesta(element.opciones.c);
       });
     });
   }
