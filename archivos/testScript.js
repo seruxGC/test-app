@@ -123,21 +123,48 @@ function comenzar() {
   // Variables del cuestionario initCuestionario()
   let opciones;
 
+  /**
+  * Se encarga de la oapcidad y el tamaño de las imagenes de las preguntas
+  */
+  function numTablaActiva() {
+    for (let i = 0; i < TEST.TOTAL_PREGUNTAS; i += 1) {
+      if (i <= numeroDeTabla) {
+        numImages[i].style.opacity = 1;
+        numImages[i].style.width = '100%';
+      } else {
+        numImages[i].style.opacity = 0.3;
+      }
+    }
+  }
+
+  /**
+   *
+   * @param {string} respuestaPulsada
+   */
   function comprobarRespuesta(respuestaPulsada) {
+    // Poner opacidad al numero de la pregunta
+    numTablaActiva();
+
+    // Obtener la respuesta correcta
     const opcionCorrecta = TEST.cuestionario[numeroDeTabla].correcta;
 
+    // Comprobar la respuesta
     if (respuestaPulsada === TEST.cuestionario[numeroDeTabla]
       .opciones[opcionCorrecta]) {
       // Respuesta  correcta
     } else {
       // Respuesta incorrecta
+
       /* Crear un elemento con la imagen de pregunta incorrecta y añadirlo
       al contenedor del numero de las imgagenes */
-
       numImages[numeroDeTabla].setAttribute('src', `Imagenes/${numeroDeTabla + 1}.png`);
     }
   }
 
+  /**
+   * Inicializa los componentes referentes al cuestionario
+   * (Preguntas y respuestas)
+   */
   function initCuestionario() {
     // Inicializacion de variables del cuestionario
     const preguntas = document
@@ -196,16 +223,6 @@ function comenzar() {
     numeroDeTabla = checkTabNum(numeroDeTabla);
   }
 
-  function cambiarOpacidadNumTablas() {
-    for (let i = 0; i < TEST.TOTAL_PREGUNTAS; i += 1) {
-      if (i <= numeroDeTabla) {
-        numImages[i].style.opacity = 1;
-      } else {
-        numImages[i].style.opacity = 0.3;
-      }
-    }
-  }
-
   function siguienteTabla() {
     ocultarTablas();
 
@@ -214,9 +231,6 @@ function comenzar() {
 
     // Mostrar tabla
     tablas[numeroDeTabla].style.display = 'block';
-
-    // Actualizar imagenes de los numeros de las tablas
-    cambiarOpacidadNumTablas(numeroDeTabla);
   }
 
   function anteriorTabla() {
@@ -227,9 +241,6 @@ function comenzar() {
 
     // Mostrar tabla
     tablas[numeroDeTabla].style.display = 'block';
-
-    // Actualizar imagenes de los numeros de las tablas
-    cambiarOpacidadNumTablas(numeroDeTabla);
   }
 
   function selectTab(tablaSeleccionada) {
@@ -248,12 +259,11 @@ function comenzar() {
 
 
     // Inicializacion del cuestionario
-
     initCuestionario();
-
 
     // Mostrar la primera tabla
     siguienteTabla();
+
 
     // Añadir evento al pulsar boton de navegacion
     btnSiguiente.onclick = siguienteTabla;
