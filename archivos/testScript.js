@@ -129,10 +129,12 @@ function comenzar() {
     if (respuestaPulsada === TEST.cuestionario[numeroDeTabla]
       .opciones[opcionCorrecta]) {
       // Respuesta  correcta
-      console.log('true');
     } else {
       // Respuesta incorrecta
-      console.log('false');
+      /* Crear un elemento con la imagen de pregunta incorrecta y añadirlo
+      al contenedor del numero de las imgagenes */
+
+      numImages[numeroDeTabla].setAttribute('src', `Imagenes/${numeroDeTabla + 1}.png`);
     }
   }
 
