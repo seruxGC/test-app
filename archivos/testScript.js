@@ -17,6 +17,7 @@ function comenzar() {
           c: 'opcionC1',
         },
         correcta: 'a',
+        respondida: false,
       },
 
       {
@@ -27,6 +28,7 @@ function comenzar() {
           c: 'opcionC2',
         },
         correcta: 'b',
+        respondida: false,
       },
 
       {
@@ -37,6 +39,7 @@ function comenzar() {
           c: 'opcionC3',
         },
         correcta: 'b',
+        respondida: false,
       },
 
       {
@@ -47,6 +50,7 @@ function comenzar() {
           c: 'opcionC4',
         },
         correcta: 'b',
+        respondida: false,
       },
 
       {
@@ -57,6 +61,7 @@ function comenzar() {
           c: 'opcionC5',
         },
         correcta: 'b',
+        respondida: false,
       },
 
       {
@@ -67,6 +72,7 @@ function comenzar() {
           c: 'opcionC6',
         },
         correcta: 'b',
+        respondida: false,
       },
 
       {
@@ -77,6 +83,7 @@ function comenzar() {
           c: 'opcionC7',
         },
         correcta: 'b',
+        respondida: false,
       },
 
       {
@@ -87,6 +94,7 @@ function comenzar() {
           c: 'opcionC8',
         },
         correcta: 'b',
+        respondida: false,
       },
 
       {
@@ -97,6 +105,7 @@ function comenzar() {
           c: 'opcionC9',
         },
         correcta: 'b',
+        respondida: false,
       },
 
       {
@@ -107,6 +116,7 @@ function comenzar() {
           c: 'opcionC10',
         },
         correcta: 'b',
+        respondida: false,
       },
     ],
 
@@ -124,7 +134,7 @@ function comenzar() {
   let opciones;
 
   /**
-  * Se encarga de la oapcidad y el tamaño de las imagenes de las preguntas
+  * Se encarga de la opacidad y el tamaño de las imagenes de las preguntas
   */
   function numTablaActiva() {
     for (let i = 0; i < TEST.TOTAL_PREGUNTAS; i += 1) {
@@ -138,12 +148,32 @@ function comenzar() {
   }
 
   /**
+   * Se encarga de la opacidad de los botones de navegacion. Comprueba
+   * si la pregunta actual esta respondida y pone su opacidad en funcion
+   * de ello.
+   */
+  function actualizarOpacidadNav() {
+    const preguntaActual = TEST.cuestionario[numeroDeTabla];
+    if (preguntaActual.respondida) {
+      btnSiguiente.style.opacity = 1;
+    } else {
+      btnSiguiente.style.opacity = 0.3;
+    }
+  }
+
+  /**
    *
    * @param {string} respuestaPulsada
    */
   function comprobarRespuesta(respuestaPulsada) {
     // Poner opacidad al numero de la pregunta
     numTablaActiva();
+
+    // Marcar la pregunta actual como respondida
+    TEST.cuestionario[numeroDeTabla].respondida = true;
+
+    // Poner opacidad al boton de siguiente
+    actualizarOpacidadNav();
 
     // Obtener la respuesta correcta
     const opcionCorrecta = TEST.cuestionario[numeroDeTabla].correcta;
@@ -205,8 +235,8 @@ function comenzar() {
   }
 
   function checkTabNum(numTabla) {
-  /* Comprobar si el numero de la tabla es superior al maximo
-   de preguntas */
+    /* Comprobar si el numero de la tabla es superior al maximo
+     de preguntas */
     let num = numTabla;
 
     if (numTabla === TEST.TOTAL_PREGUNTAS) {
@@ -223,21 +253,29 @@ function comenzar() {
     numeroDeTabla = checkTabNum(numeroDeTabla);
   }
 
+  /**
+   * Avanza a la siduiente tabla si la actual está respondida
+   */
   function siguienteTabla() {
-    ocultarTablas();
+    if (TEST.cuestionario[numeroDeTabla].respondida) {
+      // Si la pregunta esta respondida
+      ocultarTablas();
 
-    // Actualiza el indice de la tabla
-    actualizaIndiceTabla(1);
+      actualizaIndiceTabla(1);
 
-    // Mostrar tabla
-    tablas[numeroDeTabla].style.display = 'block';
+      actualizarOpacidadNav();
+
+      // Mostrar tabla
+      tablas[numeroDeTabla].style.display = 'block';
+    }
   }
 
   function anteriorTabla() {
     ocultarTablas();
 
-    // Actualiza el indice de la tabla
     actualizaIndiceTabla(-1);
+
+    actualizarOpacidadNav();
 
     // Mostrar tabla
     tablas[numeroDeTabla].style.display = 'block';
@@ -255,14 +293,14 @@ function comenzar() {
     btnSiguiente = document.getElementById('btn-siguiente');
     btnAnterior = document.getElementById('btn-anterior');
     tablas = document.getElementsByClassName('tabla');
-    numeroDeTabla = -1;
+    numeroDeTabla = 0;
 
 
     // Inicializacion del cuestionario
     initCuestionario();
 
     // Mostrar la primera tabla
-    siguienteTabla();
+    tablas[numeroDeTabla].style.display = 'block';
 
 
     // Añadir evento al pulsar boton de navegacion
