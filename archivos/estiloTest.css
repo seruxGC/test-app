@@ -13,7 +13,8 @@
 #numeracionTest{
 	display: flex;
 	align-items: center;
-	min-height: 55px;
+	min-height: 4.5em;
+    max-height: 4.5em;
 	background-color: Grey;
 	border-bottom: 1px solid black;
 }
