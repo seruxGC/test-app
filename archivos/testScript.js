@@ -174,8 +174,10 @@ function comenzar() {
     });
     // Añade animacion al numero de la imagen de la tabla actual
     imagenActual.classList.add('smallBig');
-    // Incrementa un poco su opacidad
-    imagenActual.style.opacity = 0.6;
+    // Incrementa un poco su opacidad si la pregunta no ha sido respondida
+    if (!TEST.cuestionario[numeroDeTabla].respondida) {
+      imagenActual.style.opacity = 0.6;
+    }
   };
 
   /**
