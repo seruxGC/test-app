@@ -30,7 +30,7 @@
 }
 
 #btn-siguiente{
-	opacity: 0.3;
+	opacity: 0.2;
 }
 
 .numContainer{
@@ -43,24 +43,37 @@
 .numImage{
 	cursor: pointer;
 	width: 70%;
-	opacity: 0.3;
+	opacity: 0.2;
 }
 
 .tabla{
 	display: none;
 	width: 100%;
+	overflow: hidden;
+
+	animation-name: fadeIn;
+	animation-duration: 1.5s;
+
+	-webkit-animation-name:  fadeIn;
+	-webkit-animation-duration: 1.5s;
 	/*min-height: 240px;*/
 }
 
 .contenedorPregunta{
+	position: relative;
 	display: flex;
 	justify-content: center;
 	align-items: center;
-	text-align: center;
 	min-height: 60px;
+	overflow: auto;
+
+	animation: desdeDerecha 1s;
+	-webkit-animation: desdeDerecha 1s; 
+	
+	text-align: center;
 	color: white;
 	font-size: 1.7em;
-	overflow: auto;
+	
 
 	border: 1px solid red;
 }
@@ -89,8 +102,12 @@
 }
 
 .respuestaHorizontal{
+	position: relative;
 	width: 100%;
 	border: 1px solid orange;
+
+	animation-name: desdeIzquierda;
+	animation-duration: 1s;
 }
 
 
@@ -102,3 +119,53 @@
 .activeTab{
 	display: block;
 }
+
+/* Animaciones */
+
+/*Standar syntax*/
+@keyframes fadeIn {
+	from {opacity: 0;}
+	to {opacity: 1;}
+}
+
+/* Safary */
+@-webkit-keyframes fadeIn {
+	from {opacity: 0;}
+	to {opacity: 1;}
+}
+
+@keyframes desdeDerecha {
+	from {right: 200px;}
+	to {right: 0px;}
+}
+
+@-webkit-keyframes desdeDerecha {
+	from {right: 200px;}
+	to {right: 0px;}
+}
+
+@keyframes desdeIzquierda {
+	from {left: 200px;}
+	to {left: 0px;}
+}
+
+@-webkit-keyframes desdeIzquierda {
+	from {left: 200px;}
+	to {left: 0px;}
+}
+
+.smallBig{
+	animation: smallBig 0.6s infinite alternate;
+}
+
+@keyframes smallBig {
+	from {width: 70%;}
+	to {width: 100%;}
+}
+
+@-webkit-keyframes smallBig {
+	from {width: 70%;}
+	to {width: 100%;}
+}
+
+

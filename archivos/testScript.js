@@ -124,6 +124,7 @@ function comenzar() {
 
 
   // Variables de elementos init()
+  const pocaOpacidad = 0.2;
   let btnSiguiente;
   let btnAnterior;
   let tablas; // Coleccion de las tablas para mostrar
@@ -142,7 +143,7 @@ function comenzar() {
         numImages[i].style.opacity = 1;
         numImages[i].style.width = '100%';
       } else {
-        numImages[i].style.opacity = 0.3;
+        numImages[i].style.opacity = pocaOpacidad;
       }
     }
   };
@@ -157,9 +158,25 @@ function comenzar() {
     if (preguntaActual.respondida) {
       btnSiguiente.style.opacity = 1;
     } else {
-      btnSiguiente.style.opacity = 0.3;
+      btnSiguiente.style.opacity = pocaOpacidad;
     }
   }
+
+  /**
+   * Pone animacion al numero de imagen de la tabla seleccionada actualmente
+   */
+  const actualizaAnimaNumTab = function actualizaAnimacionNumeroTablaActual() {
+    const imagenActual = numImages[numeroDeTabla];
+
+    numImages.forEach((imagen) => {
+      // Quita todas las animaciones
+      imagen.classList.remove('smallBig');
+    });
+    // Añade animacion al numero de la imagen de la tabla actual
+    imagenActual.classList.add('smallBig');
+    // Incrementa un poco su opacidad
+    imagenActual.style.opacity = 0.6;
+  };
 
   /**
    * Comprueba si la respuesta pulsada es la correcta.
@@ -169,6 +186,9 @@ function comenzar() {
     if (!TEST.cuestionario[numeroDeTabla].respondida) {
       // Poner opacidad al numero de la pregunta
       actOpaNum();
+
+      // Parar animacion del numero de pregunta
+      numImages[numeroDeTabla].classList.remove('smallBig');
 
       // Marcar la pregunta actual como respondida
       TEST.cuestionario[numeroDeTabla].respondida = true;
@@ -266,6 +286,7 @@ function comenzar() {
   function mostrarTabla(numero) {
     ocultarTablas();
     actualizarOpacidadNav();
+    actualizaAnimaNumTab();
     tablas[numero].style.display = 'block';
   }
 
@@ -313,6 +334,7 @@ function comenzar() {
     initCuestionario();
 
     // Mostrar la primera tabla
+    actualizaAnimaNumTab();
     tablas[numeroDeTabla].style.display = 'block';
 
 
