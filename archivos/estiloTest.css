@@ -7,6 +7,7 @@
 	min-width: 500px;
 	max-width: 700px;
 	background-color: SlateGrey;
+	border-radius: 6px;
 }
 
 
@@ -17,6 +18,7 @@
     max-height: 4.5em;
 	background-color: Grey;
 	border-bottom: 1px solid black;
+	border-radius: 6px;
 }
 
 
@@ -62,20 +64,16 @@
 
 .contenedorPregunta{
 	position: relative;
-	display: flex;
-	justify-content: center;
-	align-items: center;
-	min-height: 60px;
-	overflow: auto;
-
-	animation: desdeDerecha 1s;
-	-webkit-animation: desdeDerecha 1s; 
-	
-	text-align: center;
-	color: white;
-	font-size: 1.7em;
-	
-
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 70px;
+    overflow: hidden;
+    animation: desdeDerecha 1s;
+    -webkit-animation: desdeDerecha 1s;
+    padding: 10px 20px;
+    color: white;
+    font-size: 1.4em;
 	border: 1px solid red;
 }
 
@@ -121,6 +119,20 @@
 	display: block;
 }
 
+#explicacion{
+	display: none;
+	margin: 20px auto;
+	min-height: 50px;
+	width: 65%;
+    min-width: 500px;
+	max-width: 700px;
+	padding: 10px;
+    font-size: 1.1em;
+    border-radius: 5px;
+	border: 1px solid steelblue;
+	animation: fadeIn 1.2s;
+}
+
 /* Animaciones */
 
 /*Standar syntax*/
@@ -133,6 +145,18 @@
 @-webkit-keyframes fadeIn {
 	from {opacity: 0;}
 	to {opacity: 1;}
+}
+
+
+@keyframes fadeOut{
+	0% {opacity: 1;}
+	100% {opacity: 0}
+}
+
+/* Safary */
+@-webkit-keyframes fadeOut{
+	0% {opacity: 1;}
+	100% {opacity: 0}
 }
 
 @keyframes desdeDerecha {
@@ -157,6 +181,7 @@
 
 .smallBig{
 	animation: smallBig 0.6s infinite alternate;
+	-webkit-animation: smallBig 0.6s infinite alternate;
 }
 
 @keyframes smallBig {

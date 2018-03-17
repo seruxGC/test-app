@@ -10,14 +10,15 @@ function comenzar() {
     cuestionario: [
 
       {
-        pregunta: 'pregunta1',
+        pregunta: 'Nos encanta mirar al cielo pero hay un mamífero al que esta acción le es físicamente imposible. ¿De qué animal se trata?',
         opciones: {
-          a: 'opcionA1',
-          b: 'opcionB1',
-          c: 'opcionC1',
+          a: 'De la jirafa',
+          b: 'Del cerdo',
+          c: 'Del rinoceronte',
         },
-        correcta: 'a',
+        correcta: 'b',
         respondida: false,
+        explicacion: 'Lo cierto es que los cerdos no pueden mirar hacia arriba. La forma de su cuello les impide realizar este movimiento, por lo que para mirar el cielo lo único que podríamos hacer sería... ponerlos boca arriba. Ciertamente su morfología les priva de este placer.',
       },
 
       {
@@ -29,6 +30,7 @@ function comenzar() {
         },
         correcta: 'b',
         respondida: false,
+        explicacion: '',
       },
 
       {
@@ -40,6 +42,7 @@ function comenzar() {
         },
         correcta: 'b',
         respondida: false,
+        explicacion: '',
       },
 
       {
@@ -51,6 +54,7 @@ function comenzar() {
         },
         correcta: 'b',
         respondida: false,
+        explicacion: '',
       },
 
       {
@@ -62,6 +66,7 @@ function comenzar() {
         },
         correcta: 'b',
         respondida: false,
+        explicacion: '',
       },
 
       {
@@ -73,6 +78,7 @@ function comenzar() {
         },
         correcta: 'b',
         respondida: false,
+        explicacion: '',
       },
 
       {
@@ -84,6 +90,7 @@ function comenzar() {
         },
         correcta: 'b',
         respondida: false,
+        explicacion: '',
       },
 
       {
@@ -95,6 +102,7 @@ function comenzar() {
         },
         correcta: 'b',
         respondida: false,
+        explicacion: '',
       },
 
       {
@@ -106,6 +114,7 @@ function comenzar() {
         },
         correcta: 'b',
         respondida: false,
+        explicacion: '',
       },
 
       {
@@ -117,6 +126,7 @@ function comenzar() {
         },
         correcta: 'b',
         respondida: false,
+        explicacion: '',
       },
     ],
 
@@ -124,6 +134,7 @@ function comenzar() {
 
 
   // Variables de elementos init()
+  const contenedorExplicacion = document.getElementById('explicacion');
   const pocaOpacidad = 0.2;
   let btnSiguiente;
   let btnAnterior;
@@ -180,12 +191,47 @@ function comenzar() {
     }
   };
 
+  function mostrarExplicacion() {
+    contenedorExplicacion.innerHTML = TEST.cuestionario[numeroDeTabla].explicacion;
+    contenedorExplicacion.style.display = 'block';
+  }
+
+  function ocultarExplicacion() {
+    contenedorExplicacion.style.display = 'none';
+    contenedorExplicacion.removeAttribute('style');
+  }
+
+  /**
+   * Anima el contenedor de explicacion en funcion de si la actual y la nueva
+   * estan respondidas
+   * @param {*} indiceActual
+   * @param {*} nuevoIndice
+   */
+  function animaExplicacion(indiceActual, nuevoIndice) {
+    if (TEST.cuestionario[indiceActual].respondida &&
+      TEST.cuestionario[nuevoIndice].respondida) {
+      contenedorExplicacion.style.animation = 'fadeOut 0.7s forwards';
+      setTimeout(() => {
+        contenedorExplicacion.removeAttribute('style');
+        mostrarExplicacion();
+      }, 700);
+    } else if (TEST.cuestionario[nuevoIndice].respondida) {
+      mostrarExplicacion();
+      contenedorExplicacion.style.animation = 'fadeIn 1.2s';
+    } else {
+      ocultarExplicacion();
+    }
+  }
+
+
   /**
    * Comprueba si la respuesta pulsada es la correcta.
    * @param {string} respuestaPulsada
    */
   function comprobarRespuesta(respuestaPulsada) {
-    if (!TEST.cuestionario[numeroDeTabla].respondida) {
+    const preguntaActual = TEST.cuestionario[numeroDeTabla];
+
+    if (!preguntaActual.respondida) {
       // Poner opacidad al numero de la pregunta
       actOpaNum();
 
@@ -193,26 +239,23 @@ function comenzar() {
       numImages[numeroDeTabla].classList.remove('smallBig');
 
       // Marcar la pregunta actual como respondida
-      TEST.cuestionario[numeroDeTabla].respondida = true;
+      preguntaActual.respondida = true;
 
       // Poner opacidad al boton de siguiente
       actualizarOpacidadNav();
 
       // Obtener la respuesta correcta
-      const opcionCorrecta = TEST.cuestionario[numeroDeTabla].correcta;
+      const opcionCorrecta = preguntaActual.correcta;
 
       // Comprobar la respuesta
-      if (respuestaPulsada === TEST.cuestionario[numeroDeTabla]
-        .opciones[opcionCorrecta]) {
+      if (respuestaPulsada === preguntaActual.opciones[opcionCorrecta]) {
         // Respuesta  correcta
       } else {
         // Respuesta incorrecta
-
-        /* Crear un elemento con la imagen de pregunta incorrecta y añadirlo
-        al contenedor del numero de las imgagenes */
         numImages[numeroDeTabla].setAttribute('src', `Imagenes/${numeroDeTabla + 1}.png`);
       }
     }
+    mostrarExplicacion();
   }
 
   /**
@@ -299,6 +342,7 @@ function comenzar() {
     if (TEST.cuestionario[numeroDeTabla].respondida) {
       actualizaIndiceTabla(1);
       mostrarTabla(numeroDeTabla);
+      animaExplicacion((numeroDeTabla - 1), numeroDeTabla);
     }
   }
 
@@ -306,6 +350,7 @@ function comenzar() {
   function anteriorTabla() {
     actualizaIndiceTabla(-1);
     mostrarTabla(numeroDeTabla);
+    animaExplicacion((numeroDeTabla + 1), numeroDeTabla);
   }
 
   /**
@@ -315,6 +360,7 @@ function comenzar() {
    */
   function selectTab(tablaSeleccionada) {
     if (TEST.cuestionario[tablaSeleccionada].respondida) {
+      animaExplicacion(numeroDeTabla, tablaSeleccionada);
       numeroDeTabla = tablaSeleccionada;
       mostrarTabla(numeroDeTabla);
     }
