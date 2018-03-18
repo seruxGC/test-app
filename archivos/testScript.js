@@ -18,7 +18,7 @@ function comenzar() {
         },
         correcta: 'b',
         respondida: false,
-        explicacion: 'Lo cierto es que los cerdos no pueden mirar hacia arriba. La forma de su cuello les impide realizar este movimiento, por lo que para mirar el cielo lo único que podríamos hacer sería... ponerlos boca arriba. Ciertamente su morfología les priva de este placer.',
+        explicacion: '<p>Lo cierto es que <strong>los cerdos</strong> no pueden mirar hacia arriba. La forma de su cuello les impide realizar este movimiento, por lo que para mirar el cielo lo único que podríamos hacer sería... ponerlos boca arriba.</p><p>Ciertamente su morfología les priva de este placer.</p>',
       },
 
       {
@@ -30,7 +30,7 @@ function comenzar() {
         },
         correcta: 'b',
         respondida: false,
-        explicacion: 'En el caso del tiburón ballena (Rhincodon typus) podemos contar más de 4.500 dientes en su enorme boca; unos dientes implantados directamente en las encías, tremendamente finos y cortantes. Es el pez existente más grande del mundo pero, a pesar de su tamaño y su enorme boca, no hay nada que temer pues esta especie se alimenta fundamentalmente de plancton.',
+        explicacion: '<p>En el caso del <strong>tiburón ballena (Rhincodon typus)</strong> podemos contar más de 4.500 dientes en su enorme boca; unos dientes implantados directamente en las encías, tremendamente finos y cortantes.</p><p>Es el pez existente más grande del mundo pero, a pesar de su tamaño y su enorme boca, no hay nada que temer pues esta especie se alimenta fundamentalmente de plancton.</p>',
       },
 
       {
@@ -42,7 +42,7 @@ function comenzar() {
         },
         correcta: 'a',
         respondida: false,
-        explicacion: 'Las ranas, los caballos y las ratas son los únicos animales incapaces de vomitar. ¿Por qué? La clave está en el esófago. Este, está rodeado de un músculo tremendamente poderoso justo en la zona que conecta con el estómago, impidiendo así que los alimentos puedan volver al esófago y ser expulsados.',
+        explicacion: '<p><strong>Las ranas, los caballos y las ratas</strong> son los únicos animales incapaces de vomitar. ¿Por qué? La clave está en el esófago. Este, está rodeado de un músculo tremendamente poderoso justo en la zona que conecta con el estómago, impidiendo así que los alimentos puedan volver al esófago y ser expulsados.</p>',
       },
 
       {
@@ -54,7 +54,7 @@ function comenzar() {
         },
         correcta: 'c',
         respondida: false,
-        explicacion: 'La salamandra negra alpina (Salamandra atra), que alcanza los 15 centímetros de longitud y posee un color negro muy característico y puro, tiene un periodo de gestación que puede ir desde los 2 hasta los 4 años. Este anfibio, principalmente nocturno, da a luz una o dos crías completamente desarrolladas que miden unos 4 centímetros de largo y son capaces de vivir en tierra firme.',
+        explicacion: '<p><strong>La salamandra negra alpina (Salamandra atra)</strong>, que alcanza los 15 centímetros de longitud y posee un color negro muy característico y puro, tiene un periodo de gestación que puede ir desde los 2 hasta los 4 años.</p><p> Este anfibio, principalmente nocturno, da a luz una o dos crías completamente desarrolladas que miden unos 4 centímetros de largo y son capaces de vivir en tierra firme.</p>',
       },
 
       {
@@ -66,7 +66,7 @@ function comenzar() {
         },
         correcta: 'b',
         respondida: false,
-        explicacion: 'Los ratones pueden consumar su relación sexual en apenas 5 segundos. En contraposición con los caracoles, que pasan más de 6 horas hasta consumar el acto sexual. Durante este tiempo, los caracoles expulsan un moco lleno de calcio que aumenta la cantidad de semen que quedará dentro de la hembra.',
+        explicacion: '<p><strong>Los ratones</strong> pueden consumar su relación sexual en apenas 5 segundos. En contraposición con los caracoles, que pasan más de 6 horas hasta consumar el acto sexual. Durante este tiempo, los caracoles expulsan un moco lleno de calcio que aumenta la cantidad de semen que quedará dentro de la hembra.</p>',
       },
 
       {
@@ -78,7 +78,7 @@ function comenzar() {
         },
         correcta: 'c',
         respondida: false,
-        explicacion: 'Un estudio publicado en la revista Biology Letters concluyó que los orangutanes también se contagian la risa. Poseen empatía. La velocidad con la que los orangutanes del experimento copiaron las expresiones de carcajadas, sugirió que se trataba de actos involuntarios: esto es, se contagiaban de la risa.',
+        explicacion: '<p>Un estudio publicado en la revista Biology Letters concluyó que <strong>los orangutanes</strong> también se contagian la risa. Poseen empatía. La velocidad con la que los orangutanes del experimento copiaron las expresiones de carcajadas, sugirió que se trataba de actos involuntarios: esto es, se contagiaban de la risa.</p>',
       },
 
       {
@@ -90,7 +90,7 @@ function comenzar() {
         },
         correcta: 'b',
         respondida: false,
-        explicacion: 'Las orugas tienen entre tres y seis veces más músculos que los seres humanos. Poseen más de 2.000 en comparación con los alrededor de 600 del ser humano, en un cuerpo considerablemente más grande.',
+        explicacion: '<p><strong>Las orugas</strong> tienen entre tres y seis veces más músculos que los seres humanos. Poseen más de 2.000 en comparación con los alrededor de 600 del ser humano, en un cuerpo considerablemente más grande.</p>',
       },
 
       {
@@ -102,7 +102,7 @@ function comenzar() {
         },
         correcta: 'c',
         respondida: false,
-        explicacion: 'Los caballitos de mar poseen un sistema de reproducción bastante particular. La hembra deposita varios centenares de huevos en el macho y es este el que gesta las crías. Tras varias semanas de gestación dentro del abdomen masculino, nacerán, tras unos dos días de parto con contracciones, aproximadamente, unas 1.500 crías.',
+        explicacion: '<p><strong>Los caballitos de mar</strong> poseen un sistema de reproducción bastante particular. La hembra deposita varios centenares de huevos en el macho y es este el que gesta las crías.</p><p> Tras varias semanas de gestación dentro del abdomen masculino, nacerán, tras unos dos días de parto con contracciones, aproximadamente, unas 1.500 crías.</p>',
       },
 
       {
@@ -114,7 +114,7 @@ function comenzar() {
         },
         correcta: 'a',
         respondida: false,
-        explicacion: 'El coyote es uno de los mamíferos terrestres más veloces , llega a los 65 Km/h. La gacela corre hasta unos 80 km/h. En el Top de la lista de mamíferos veloces está el guepardo, con sus 115 km/hora.',
+        explicacion: '<p><strong>El coyote</strong> es uno de los mamíferos terrestres más veloces , llega a los 65 Km/h. <strong>La gacela</strong> corre hasta unos 80 km/h. En el Top de la lista de mamíferos veloces está <strong>el guepardo</strong>, con sus 115 km/hora.</p>',
       },
 
       {
@@ -126,7 +126,7 @@ function comenzar() {
         },
         correcta: 'a',
         respondida: false,
-        explicacion: 'El Escarabajo Titán (Titanus giganteus) es oriundo de América del Sur (bosques húmedos tropicales) y mide casi 17 centímetros. Sus colosales características no acaban ahí pues tiene una mandíbula tan fuerte que puede romper un lápiz de madera en dos o rasgar la piel humana. Cuando llega a su etapa adulta dejan de alimentarse y utilizan sus mandíbulas para defenderse o aparearse.',
+        explicacion: '<p><strong>El Escarabajo Titán (Titanus giganteus)</strong> es oriundo de América del Sur (bosques húmedos tropicales) y mide casi 17 centímetros.</p><p> Sus colosales características no acaban ahí pues tiene una mandíbula tan fuerte que puede romper un lápiz de madera en dos o rasgar la piel humana. Cuando llega a su etapa adulta dejan de alimentarse y utilizan sus mandíbulas para defenderse o aparearse.</p>',
       },
     ],
 
@@ -141,9 +141,7 @@ function comenzar() {
   let tablas; // Coleccion de las tablas para mostrar
   let numeroDeTabla; // Numero de la tabla actual
   let numImages; // Imagenes de los indices de las tablas
-
-  // Variables del cuestionario initCuestionario()
-  let opciones;
+  let opciones; // NodeList de los contenedores de respuestas
 
   /**
   * Se encarga de la opacidad y el tamaño de las imagenes de las preguntas
@@ -204,8 +202,8 @@ function comenzar() {
   /**
    * Anima el contenedor de explicacion en funcion de si la actual y la nueva
    * estan respondidas
-   * @param {*} indiceActual
-   * @param {*} nuevoIndice
+   * @param {number} nuevoIndice
+   * @param {number} indiceActual
    */
   function animaExplicacion(indiceActual, nuevoIndice) {
     if (TEST.cuestionario[indiceActual].respondida &&
@@ -223,6 +221,62 @@ function comenzar() {
     }
   }
 
+  /**
+   * Determina cuales son los contenedores de las respuesta actual
+   * y los colorea en funcion de si son correctas o no
+   * @param {number} indicePulsado
+   */
+  function coloreaRespuestas(indicePulsado) {
+    // Hacer solo si la pregunta no ha sido respondida
+    let indicePrimerContenedor;
+    let indcieTercerContenedor;
+    const opcionesPreguntaActual = TEST.cuestionario[numeroDeTabla].opciones;
+    const letraRespuestaCorrectaActual = TEST.cuestionario[numeroDeTabla].correcta;
+
+    if (indicePulsado % 3 === 0) {
+      // El contenedor pulsado es el primero
+      indicePrimerContenedor = indicePulsado;
+      indcieTercerContenedor = indicePulsado + 2;
+    } else if (indicePulsado % 3 === 1) {
+      // El contenedor pulsado es el segundo
+      indicePrimerContenedor = indicePulsado - 1;
+      indcieTercerContenedor = indicePulsado + 1;
+    } else if (indicePulsado % 3 === 2) {
+      // El contenedor pulsado es el tercero
+      indicePrimerContenedor = indicePulsado - 2;
+      indcieTercerContenedor = indicePulsado;
+    }
+
+    // Recorrer todos los contenedores de respuestas
+    for (let i = indicePrimerContenedor; i <= indcieTercerContenedor; i += 1) {
+      /* Si la respuesta es la correcta poner fondo verde
+       , si no , rojo */
+      if (opciones[i].innerHTML === opcionesPreguntaActual[letraRespuestaCorrectaActual]) {
+        // Poner fondo verde
+        opciones[i].style.backgroundColor = 'rgb(86, 180, 140)';
+      } else {
+        // Poner fondo rojo
+        opciones[i].style.backgroundColor =
+          'rgba(239, 58, 1, 0.72)';
+      }
+    }
+  }
+
+
+  /**
+
+   * Añade listeners a todos los contenedores de las respuestas
+   * @param {NodeList} contenedorRespuestanodeList
+   */
+  const añadeListenerEnRes =
+    function añadeListenersEnContenedorDeRespuesta(contenedorRespuestanodeList) {
+      contenedorRespuestanodeList
+        .forEach((contenedor, indiceContenedor) => {
+          contenedor.addEventListener('click', () => {
+            coloreaRespuestas(indiceContenedor);
+          }, true);
+        });
+    };
 
   /**
    * Comprueba si la respuesta pulsada es la correcta.
@@ -252,7 +306,7 @@ function comenzar() {
         // Respuesta  correcta
       } else {
         // Respuesta incorrecta
-        numImages[numeroDeTabla].setAttribute('src', `Imagenes/${numeroDeTabla + 1}.png`);
+        numImages[numeroDeTabla].setAttribute('src', `./imagenes/${numeroDeTabla + 1}.png`);
       }
     }
     mostrarExplicacion();
@@ -278,18 +332,19 @@ function comenzar() {
       opciones[index * 3].innerHTML = element.opciones.a;
       opciones[index * 3].addEventListener('click', () => {
         comprobarRespuesta(element.opciones.a);
-      });
+      }, true);
 
       opciones[(index * 3) + 1].innerHTML = element.opciones.b;
       opciones[(index * 3) + 1].addEventListener('click', () => {
         comprobarRespuesta(element.opciones.b);
-      });
+      }, true);
 
       opciones[(index * 3) + 2].innerHTML = element.opciones.c;
       opciones[(index * 3) + 2].addEventListener('click', () => {
         comprobarRespuesta(element.opciones.c);
-      });
+      }, true);
     });
+    añadeListenerEnRes(opciones);
   }
 
   /**
