@@ -208,4 +208,60 @@ body{
 	to {width: 100%;}
 }
 
+@media only screen and (max-width: 768px) {
+	/* Para telefonos moviles: */
+/* 	html {
+		
+	 }
+	  */
+	
+	body{
+	/* 	min-height: 100%; */
+		background: url('./imagenes/fondo.jpg') no-repeat;
+		/* background-size: cover; */
+	}
+	
+	#Test{
+		margin: 0 auto;
+		width: auto;
+		min-width: auto;
+	}
+
+	#numeracionTest{
+		min-height: auto;
+		min-height: 2.6em;
+	}
+
+	.contenedorPregunta{
+		text-align: justify;
+		font-size: 1rem;
+	}
+
+	.respuestaHorizontal{
+		padding: 10px;
+		font-size: 1rem;
+	}
+
+	.contenedorRespuestaHorizontal{
+		min-height: 180px;
+		justify-content: space-between;
+		padding: 10px;
+	}
+
+	.botonNav{
+		width: 49%;
+	}
+
+	#navegacion{
+		width: auto;
+		padding: 0px 10px;
+	}
+
+	#explicacion{
+		width: auto;
+		min-width: auto;
+		font-size: 1em;
+	}
+}
+
 
