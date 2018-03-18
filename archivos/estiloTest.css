@@ -1,12 +1,21 @@
+html {
+	height: 100%;
+ }
+ 
 
+body{
+	min-height: 100%;
+	background: url('./imagenes/fondo.jpg') no-repeat fixed center;
+	background-size: cover;
+}
 
 #Test{
 	position: relative;
-	margin: 20px auto;
+	margin: 40px auto;
 	width: 65%;
 	min-width: 500px;
 	max-width: 700px;
-	background-color: SlateGrey;
+	background-color: rgba(66, 81, 96, 0.46);
 	border-radius: 6px;
 }
 
@@ -16,8 +25,7 @@
 	align-items: center;
 	min-height: 4.5em;
     max-height: 4.5em;
-	background-color: Grey;
-	border-bottom: 1px solid black;
+	background-color: rgba(0, 0, 0, 0.26);
 	border-radius: 6px;
 }
 
@@ -28,8 +36,6 @@
 	width: 445px;
 	margin: 0 auto;
 	height: 50px;
-	border: 1px solid green;
-	
 }
 
 #btn-siguiente{
@@ -73,8 +79,9 @@
     -webkit-animation: desdeDerecha 1s;
     padding: 10px 20px;
     color: white;
-    font-size: 1.4em;
-	border: 1px solid red;
+	font-size: 1.6em;
+	text-align: center;
+	border-bottom: 1px solid rgba(211, 211, 211, 0.32);
 }
 
 
@@ -101,12 +108,18 @@
 }
 
 .respuestaHorizontal{
-	position: relative;
-	width: 100%;
+	font-size: 1.3em;
+    color: white;
+    position: relative;
+	padding: 20px;
 	border: 1px solid orange;
+	border-radius: 5px;
+    animation-name: desdeIzquierda;
+    animation-duration: 1s;
+}
 
-	animation-name: desdeIzquierda;
-	animation-duration: 1s;
+.respuestaHorizontal:hover{
+	cursor: pointer;
 }
 
 
@@ -128,7 +141,8 @@
 	max-width: 700px;
 	padding: 10px;
     font-size: 1.1em;
-    border-radius: 5px;
+	border-radius: 7px;
+	background-color: rgba(255, 255, 255, 0.48);
 	border: 1px solid steelblue;
 	animation: fadeIn 1.2s;
 }
